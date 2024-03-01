@@ -5,39 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elizabeth's Personal Website</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Resetting default margin and padding */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #333;
+        }
+        
+        /* Header styles */
         header {
-            background-color: #333;
+            background-color: #7EC8E3;
             color: #fff;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
-        nav {
-            background-color: #666;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+        
+        /* Main content styles */
         main {
-            padding: 20px;
+            padding: 40px;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
+        
+        /* Introductory section styles */
+        .intro {
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-bottom: 60px;
+        }
+        
+        /* Information section styles */
+        .info {
+            margin-bottom: 60px;
+        }
+        
+        /* Contact section styles */
+        .contact {
+            text-align: center;
+        }
+        
+        /* Link styles */
+        .contact a {
+            color: #7EC8E3;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -45,15 +59,24 @@
     <header>
         <h1>Welcome to Elizabeth's Personal Website</h1>
     </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
+
     <main>
-        <h2>About Me</h2>
-        <p>Hello, I'm Elizabeth. This is my personal website where I'll be sharing my thoughts, experiences, and projects.</p>
+        <section class="intro">
+            <h2>Introduction</h2>
+            <p>Hello, I'm Elizabeth. Welcome to my personal website. Feel free to explore!</p>
+        </section>
+        
+        <section class="info">
+            <h2>Work and Education</h2>
+            <p>Here you can find information about my work experience and educational background.</p>
+        </section>
+        
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <p>Connect with me on <a href="https://www.linkedin.com/">LinkedIn</a>.</p>
+        </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Elizabeth's Personal Website. All rights reserved.</p>
     </footer>
