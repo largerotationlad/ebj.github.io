@@ -43,7 +43,7 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
                             <form method="POST"
-                                action="https://script.google.com/macros/s/AKfycbwgdPowPVwWZFQ-DfekOfn6zLS2PSsOI7DyoAcqlnVI4d6QdjuasugNysmkNun2G7zI/exec">
+                                action="https://script.google.com/macros/s/AKfycbwgdPowPVwWZFQ-DfekOfn6zLS2PSsOI7DyoAcqlnVI4d6QdjuasugNysmkNun2G7zI/exec" id="my-form">
                                 <!-- Name input-->
                                 <div class="form-floating mb-3">
                                     <input class="form-control" name="Name" type="text" placeholder="Name" required />
@@ -60,12 +60,15 @@
                                         required.</div>
                                     <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.
                                     </div>
+
                                 </div>
-                                <!-- Name input-->
+                                <!-- Business input-->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" name="Business/Organization" type="text" placeholder="Business/Organization" required />
+                                    <input class="form-control" name="Business/Organization" type="text"
+                                        placeholder="Business/Organization" required />
                                     <label for="name">Business/Organization</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">A Business/Organization is required.
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A
+                                        Business/Organization is required.
                                     </div>
                                 </div>
                                 <!-- Message input-->
@@ -73,14 +76,31 @@
                                     <textarea class="form-control" name="Message" id="message"
                                         placeholder="Enter your message here..." style="height: 10rem"
                                         required></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is
-                                        required.</div>
+                                    <label for="message">Message</label>                                
                                 </div>
                                 <!-- Submit Button-->
                                 <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton"
                                         type="submit">Submit</button></div>
                             </form>
+
+                            <script>
+                                window.addEventListener("load", function() {
+                                    const form = document.getElementById('my-form');
+                                    form.addEventListener("submit", function(e) {
+                                        e.preventDefault();
+                                        const data = new FormData(form);
+                                        const action = e.target.action;
+                                        fetch(action, {
+                                            method: 'POST',
+                                            body: data,
+                                        })
+                                        .then(() => {
+                                            alert("Success!");
+                                        });
+                                    });
+                                });
+                            </script>
+
                         </div>
                     </div>
                 </div>
